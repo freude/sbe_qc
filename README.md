@@ -24,7 +24,7 @@ Before running the application, ensure that all required Python packages are ins
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/klymenko-code/sbe_qc.git
+git clone https://github.com/freude/sbe_qc.git
 cd sbe_qc
 ````
 
