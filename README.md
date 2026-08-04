@@ -45,7 +45,7 @@ pip install -r requirements.txt
 4. Optional: MPI Support to use parallel execution
 
 ```bash
-sudo apt install mpich # or openmpi
+sudo apt install openmpi-bin openmpi-common libopenmpi-dev
 pip install mpi4py
 ```
 
