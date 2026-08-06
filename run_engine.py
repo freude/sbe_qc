@@ -597,7 +597,7 @@ class Dynamics_quantum_decoupled(Dynamics):
 
         for j in indices:
 
-            pop_data_cond_tmp, pop_data_val_tmp, pol_data1_tmp, pol_data2_tmp = self.dyns[j].run_with_prerun()
+            pop_data_cond_tmp, pop_data_val_tmp, pol_data1_tmp, pol_data2_tmp = self.dyns[j].run()
 
             pop_data_cond[j, :] = pop_data_cond_tmp
             pop_data_val[j, :] = pop_data_val_tmp
@@ -606,10 +606,10 @@ class Dynamics_quantum_decoupled(Dynamics):
 
         # collect the partial results and add to the total sum
         if mpi_available:
-            comm.Allreduce(pop_data_cond, pop_data_cond)
-            comm.Allreduce(pop_data_val, pop_data_val)
-            comm.Allreduce(pol_data1, pol_data1)
-            comm.Allreduce(pol_data2, pol_data2)
+            comm.allreduce(pop_data_cond, pop_data_cond)
+            comm.allreduce(pop_data_val, pop_data_val)
+            comm.allreduce(pol_data1, pol_data1)
+            comm.allreduce(pol_data2, pol_data2)
 
         if rank == 0:
             self.backup(self.time, self.field, pop_data_cond, pop_data_val, pol_data1, pol_data2)
