@@ -12,7 +12,7 @@ The framework combines Qiskit quantum simulations with MPI-enabled parallel exec
 
 ## **Dependencies**
 
-* Python 3.9+
+* Python 3.12+
 * Qiskit
 * All libraries listed in `requirements.txt`
 
@@ -31,7 +31,7 @@ cd sbe_qc
 2. Create and activate a virtual environment (recommended):
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate        # Linux / macOS
 venv\Scripts\activate           # Windows
 ````
